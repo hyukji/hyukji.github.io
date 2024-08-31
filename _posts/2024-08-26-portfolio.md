@@ -98,61 +98,49 @@
           <img src="/assets/images/Cosmos-Redis2.png" alt="성능향상 후(1초)" style="width: 50%;">
       </div>
 
-
-
   - Java, Python 코드 실행
 
     - 실행 언어의 확장성을 고려해 `팩토리 패턴`을 활용.
 
-        <details>
+      #### CodeExecutorFactory
 
-        <summary> 팩토리 패턴 적용 코드 </summary>
+      ```java
+      @Component
+      public class CodeExecutorFactory {
 
-        #### CodeExecutorFactory
+          private final Map<Language, CodeExecutor> executors;
 
-        ```java
-        @Component
-        public class CodeExecutorFactory {
+          public CodeExecutorFactory(List<CodeExecutor> executorList) {
+              executors = executorList.stream()
+                      .collect(Collectors.toMap(CodeExecutor::getLanguage, Function.identity()));
+          }
 
-            private final Map<Language, CodeExecutor> executors;
+          public CodeExecutor getExecutor(Language language) { 
+            return executors.get(language); 
+          }
+      }
+      ```
 
-            public CodeExecutorFactory(List<CodeExecutor> executorList) {
-                executors = executorList.stream()
-                        .collect(Collectors.toMap(CodeExecutor::getLanguage, Function.identity()));
-            }
+      #### CodeExecutor
 
-            public CodeExecutor getExecutor(Language language) { 
-              return executors.get(language); 
-            }
+      ```java
+      public interface CodeExecutor {
 
-        }
-        ```
+          String executeCode(String code, String input);
 
-        #### CodeExecutor
+          File createCodeFile(String code, String hostPath) throws IOException;
 
-        ```java
-            public interface CodeExecutor {
+          Language getLanguage();
 
-                String executeCode(String code, String input);
+          default String readProcessOutput(InputStream inputStream) throws IOException { ... }
+      }
 
-                File createCodeFile(String code, String hostPath) throws IOException;
+      @Component
+      public class JavaCodeExecutor implements CodeExecutor { ... }
 
-                Language getLanguage();
-
-                default String readProcessOutput(InputStream inputStream) throws IOException { ... }
-
-            }
-
-            @Component
-            public class JavaCodeExecutor implements CodeExecutor { ... }
-
-
-            @Component
-            public class PythonCodeExecutor implements CodeExecutor { ... }
-
-        ```
-
-      </details>
+      @Component
+      public class PythonCodeExecutor implements CodeExecutor { ... }
+      ```
 
     - Container를 활용한 코드 실행 구현
 
@@ -342,7 +330,7 @@
 
 - 특허 출원
   - [빅데이터 기반 학습자 맞춤형 외국어 레벨 측정 시스템](/assets/pdf/1020210035794.pdf) (출원번호: 1020210035794)
-  - [맞춤형 외국어 문제선정 시스템](/assets/pdf/1020210035829.pdf)  (출원 번호: 1020210035829)
+  - [맞춤형 외국어 문제선정 시스템](/assets/pdf/1020210035829.pdf) (출원 번호: 1020210035829)
 
 
 </details>
