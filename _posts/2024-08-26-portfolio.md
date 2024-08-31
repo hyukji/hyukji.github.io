@@ -77,9 +77,10 @@
     - `Docker`를 활용한 코드 실행을 위한 환경 구축
     - `redis`의 캐시 처리 최적화를 위한 환경 구축
 
-    <img src="/assets/images/Cosmos-Infra.png" alt="인프라 아키텍처" width="70%">
+    <img src="/assets/images/Cosmos-Infra.png" alt="인프라 아키텍처">
 
     <!-- - ![인프라 아키텍처](/assets/images/Cosmos-Infra.png){ width=70%} -->
+
 
   - 폴더 구조 및 스터디 템플릿
 
@@ -92,8 +93,11 @@
     - `Redis`를 이용한 캐시 활용.
       - 스터디의 전체 폴더 구조의 경우 추가, 수정, 삭제 보다 조회의 호출빈도가 더 높음.
       - nGrinder를 이용한 성능 테스트를 통해 `95.6%`의 성능 향상(23초 -> 1초)
-        ![성능향상 전(23초)](/assets/images/Cosmos-Redis.png){: width=70%}
-        ![성능향상 후(1초)](/assets/images/Cosmos-Redis2.png){: width="70%"}
+      <div style="display: flex; justify-content: space-between;">
+          <img src="/assets/images/Cosmos-Redis.png" alt="성능향상 전(23초)" style="width: 50%;">
+          <img src="/assets/images/Cosmos-Redis2.png" alt="성능향상 후(1초)" style="width: 50%;">
+      </div>
+
 
 
   - Java, Python 코드 실행
@@ -101,6 +105,7 @@
     - 실행 언어의 확장성을 고려해 `팩토리 패턴`을 활용.
 
         <details>
+
         <summary> 팩토리 패턴 적용 코드 </summary>
 
         #### CodeExecutorFactory
@@ -146,6 +151,7 @@
             public class PythonCodeExecutor implements CodeExecutor { ... }
 
         ```
+        
       </details>
 
     - Container를 활용한 코드 실행 구현
@@ -205,7 +211,7 @@
 
 <details markdown="1">
 <summary class="h3-title">
-&nbsp; 어절 단위 청취 기능을 탑재한 IOS 어플리케이션 개발  
+&nbsp; 어절 단위 청취 기능을 탑재한 iOS 어플리케이션 개발  
 </summary>
 
 > 2023.1 - 2023.4
@@ -233,9 +239,11 @@
 
     - wifi & usb 를 이용한 오디오 파일 업로드 기능
     - 폴더 구조를 이용한 파일 관리
-
-      ![upload](/assets/images/Onpeat-upload.png)
-      ![upload](/assets/images/Onpeat-upload-2.png)
+  
+    <div style="display: flex; justify-content: space-between;">
+        <img src="/assets/images/Onpeat-upload.png" alt="upload" style="width: 39%;">
+        <img src="/assets/images/Onpeat-upload-2.png" alt="upload" style="width: 59%;">
+    </div>
 
   - 프로젝트 과정을 블로그에 기록하여 공유.
 
@@ -260,6 +268,7 @@
   - 코딩을 처음 배우는 학생들의 코드는 길이가 짧아 구조적 유사성은 적합한 표절 기준이 아님
   - 코딩 스타일을 기준으로 표절도를 검사하되 학습 과정에 따른 코딩 스타일의 가변성을 고려함
   - 이 알고리즘을 적용한 코딩 교육 사이트를 만들고자 함
+
 - 결과
   - 코딩 스타일 기반의 소스코드 유사도 계산 알고리즘 연구 (Python, tokenizer)
     - 변수명, 클래스명, 연산자 주위 공백 등을 기준으로 코딩 스타일 vector를 생성
