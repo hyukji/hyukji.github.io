@@ -67,7 +67,7 @@
     - 코드 실행 환경을 위한 python, Java image
     - 캐시 처리를 위한 `redis` 활용
 
-    ![인프라 아키텍처](image.png)
+    ![인프라 아키텍처](/hyukji.github.io/assets/images/Cosmos-Infra.png)
 
   - 폴더 구조 및 스터디 템플릿
 
@@ -78,55 +78,51 @@
       - `Redis`를 이용한 캐시 활용.
         - 스터디의 전체 폴더 구조의 경우 추가, 수정, 삭제 보다 조회의 호출빈도가 더 높음.
         - nGrinder를 이용한 성능 테스트를 통해 `95.6%`의 성능 향상(23초 -> 1초)
-          ![성능향상 전(23초)](image-1.png)
-          ![성능향상 후(1초)](image-2.png)
+          ![성능향상 전(23초)](/hyukji.github.io/assets/images/Cosmos-Redis.png)
+          ![성능향상 후(1초)](/hyukji.github.io/assets/images/Cosmos-Redis2.png)
 
   - Java, Python 코드 실행
 
     - 실행 언어의 확장성을 고려해 `팩토리 패턴`을 활용.
 
         <details>
-            <summary>팩토리 패턴 적용 코드</summary>
+        <summary> 팩토리 패턴 적용 코드 </summary>
 
-            #### CodeExecutorFactory
+        #### CodeExecutorFactory
 
-            ```java
+        ```java
+        @Component
+        public class CodeExecutorFactory {
 
-                @Component
-                public class CodeExecutorFactory {
+            private final Map<Language, CodeExecutor> executors;
 
-                    private final Map<Language, CodeExecutor> executors;
+            public CodeExecutorFactory(List<CodeExecutor> executorList) {
+                executors = executorList.stream()
+                        .collect(Collectors.toMap(CodeExecutor::getLanguage, Function.identity()));
+            }
 
-                    public CodeExecutorFactory(List<CodeExecutor> executorList) {
-                        executors = executorList.stream()
-                                .collect(Collectors.toMap(CodeExecutor::getLanguage, Function.identity()));
-                    }
+            public CodeExecutor getExecutor(Language language) { return executors.get(language); }
+        }
 
-                    public CodeExecutor getExecutor(Language language) { return executors.get(language); }
-                }
+        ```
 
-            ```
+        #### CodeExecutor
 
-            #### CodeExecutor
+        ```java
+            public interface CodeExecutor {
 
-            ```java
+                String executeCode(String code, String input);
 
-                public interface CodeExecutor {
+                File createCodeFile(String code, String hostPath) throws IOException;
 
-                    String executeCode(String code, String input);
+                Language getLanguage();
 
-                    File createCodeFile(String code, String hostPath) throws IOException;
+                default String readProcessOutput(InputStream inputStream) throws IOException { ... }
 
-                    Language getLanguage();
+            }
 
-                    default String readProcessOutput(InputStream inputStream) throws IOException { ... }
-
-                }
-
-            ```
-
-
-        </details>
+        ```
+      </details>
 
     - Container를 활용한 코드 실행 구현
 
@@ -210,22 +206,21 @@
     - 오디오 파일 생성 시, 오디오 파장 분석 및 어절 단위 구분
     - 어절 단위로 이동 및 반복 기능
 
-    [이미지]
+      ![성능향상 전(23초)](/hyukji.github.io/assets/images/Onpeat_audio.png)
 
   - 오디오 파일 관리 기능
 
     - wifi & usb 를 이용한 오디오 파일 업로드 기능
     - 폴더 구조를 이용한 파일 관리
 
-    [이미지]
+      ![성능향상 전(23초)](/hyukji.github.io/assets/images/Onpeat-upload.png)
+      ![성능향상 후(1초)](/hyukji.github.io/assets/images/Onpeat-upload-2.png)
 
   - 프로젝트 과정을 블로그에 기록하여 공유.
 
 #### 관련 자료
 
-[GitHub](https://github.com/hyukji/ListenApp)
-
-[Blog](https://hyukji.tistory.com/category/IOS/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80)
+[GitHub](https://github.com/hyukji/ListenApp), [Blog](https://hyukji.tistory.com/category/IOS/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80)
 
 </details>
 
@@ -319,10 +314,12 @@
   - 빅데이터 기반 학습자 맞춤형 외국어 레벨 측정 시스템 (출원번호: 1020210035794)
   - 맞춤형 외국어 문제선정 시스템 (출원 번호: 1020210035829)
 
+
+
 </details>
 
 ## 🏆 Awards
-
+- [삼성 청년 SW아카데미 프로젝트 우수상](/assets/pdf/awards/sec-team.pdf) - _삼성전자 주식회사 (2024)_
 - [삼성 청년 SW아카데미 성적우수상](/assets/pdf/awards/sec-team.pdf) - _삼성전자 주식회사 (2024)_
 - [2023 Dean's List](/assets/pdf/awards/dean.pdf) _- DGIST (2023)_
 
