@@ -1,7 +1,10 @@
 
 안녕하세요! BE/Infra 개발자 곽지혁입니다.
 
+
 (자기소개)
+
+된건가
 
 <br>
 ✔️ 다양한 협업 경험을 통해 어떤 환경에서도 빠르게 적응합니다.
@@ -19,9 +22,16 @@
 
 ### 🎓 Education
 
-- Samsung Software Academy For Youth (SSAFY)
+- Samsung Software Academy For Youth 11th (SSAFY)
 
   - 2024.01 ~
+  - SW 필수 지식과 알고리즘 중심의 몰입형 코딩 교육
+
+- 한국과학기술원 (KAIST) 몰입캠프
+  
+  - 2019년 6월 ~ 2019년 7월
+  - 협업을 통해 집중개발을 경험하는 프로그래밍 캠프
+  - 안드로이드 앱 및 Unity 3D 게임 개발
 
 - 대구경북과학기술원 (DGIST)
   - 기초학부 공학 학사, 컴퓨터 트랙
@@ -48,7 +58,7 @@
 
 > 2024.7 - 2023.8
 >
-> Samsung Software Academy For Youth
+> First Project of Samsung Software Academy For Youth
 
 #### 프로젝트 개요
 
@@ -64,22 +74,27 @@
 
     - `Nginx`를 이용한 ssl 인증, 프록시 설정
     - `Jenkins`, `WebHook`를 활용한 `ci/cd` 구축
-    - 코드 실행 환경을 위한 python, Java image
-    - 캐시 처리를 위한 `redis` 활용
+    - `Docker`를 활용한 코드 실행을 위한 환경 구축
+    - `redis`의 캐시 처리 최적화를 위한 환경 구축
 
-    ![인프라 아키텍처](/hyukji.github.io/assets/images/Cosmos-Infra.png)
+    <img src="/assets/images/Cosmos-Infra.png" alt="인프라 아키텍처" width="70%">
+
+    <!-- - ![인프라 아키텍처](/assets/images/Cosmos-Infra.png){ width=70%} -->
 
   - 폴더 구조 및 스터디 템플릿
 
-    - `재귀 구조`를 이용한 폴더 구조 구현
-    - 최적화
-      - `N+1` 문제 해결
-        - `queryDsl` 및 `fetchJoin`을 이용해 `N+1 문제` 해결
-      - `Redis`를 이용한 캐시 활용.
-        - 스터디의 전체 폴더 구조의 경우 추가, 수정, 삭제 보다 조회의 호출빈도가 더 높음.
-        - nGrinder를 이용한 성능 테스트를 통해 `95.6%`의 성능 향상(23초 -> 1초)
-          ![성능향상 전(23초)](/hyukji.github.io/assets/images/Cosmos-Redis.png)
-          ![성능향상 후(1초)](/hyukji.github.io/assets/images/Cosmos-Redis2.png)
+    - `재귀 구조`를 이용한 폴더 기능 구현
+    - 템플릿 구현을 통한 코드 자동 업로드 기능 구현
+
+  - 폴더 구조 API 최적화
+    - `N+1` 문제 해결
+      - `queryDsl` 및 `fetchJoin`을 이용해 `N+1 문제` 해결
+    - `Redis`를 이용한 캐시 활용.
+      - 스터디의 전체 폴더 구조의 경우 추가, 수정, 삭제 보다 조회의 호출빈도가 더 높음.
+      - nGrinder를 이용한 성능 테스트를 통해 `95.6%`의 성능 향상(23초 -> 1초)
+        ![성능향상 전(23초)](/assets/images/Cosmos-Redis.png){: width=70%}
+        ![성능향상 후(1초)](/assets/images/Cosmos-Redis2.png){: width="70%"}
+
 
   - Java, Python 코드 실행
 
@@ -101,9 +116,11 @@
                         .collect(Collectors.toMap(CodeExecutor::getLanguage, Function.identity()));
             }
 
-            public CodeExecutor getExecutor(Language language) { return executors.get(language); }
-        }
+            public CodeExecutor getExecutor(Language language) { 
+              return executors.get(language); 
+            }
 
+        }
         ```
 
         #### CodeExecutor
@@ -121,6 +138,13 @@
 
             }
 
+            @Component
+            public class JavaCodeExecutor implements CodeExecutor { ... }
+
+
+            @Component
+            public class PythonCodeExecutor implements CodeExecutor { ... }
+
         ```
       </details>
 
@@ -134,9 +158,6 @@
         - Container에 할당할 `메모리`, `cpu`를 설정
         - 무한 루프와 같은 경우를 대비해 컨테이너 시간이 `10초`를 넘어가지 않도록 설정
         - `세마포어`를 이용한 컨테이너 개수 제한
-
-
-        - ~~컨테이너는 매번 생성하고 삭제하는 것은 부하가 없나? 있지... 어떡하지 결국 pooling이 답인가? k8s? 어떻게 하지?~~
 
 #### 기술 및 라이브러리
 
@@ -206,15 +227,15 @@
     - 오디오 파일 생성 시, 오디오 파장 분석 및 어절 단위 구분
     - 어절 단위로 이동 및 반복 기능
 
-      ![성능향상 전(23초)](/hyukji.github.io/assets/images/Onpeat_audio.png)
+      ![Onpeat_audio](/hyukji.github.io/assets/images/Onpeat_audio.png)
 
   - 오디오 파일 관리 기능
 
     - wifi & usb 를 이용한 오디오 파일 업로드 기능
     - 폴더 구조를 이용한 파일 관리
 
-      ![성능향상 전(23초)](/hyukji.github.io/assets/images/Onpeat-upload.png)
-      ![성능향상 후(1초)](/hyukji.github.io/assets/images/Onpeat-upload-2.png)
+      ![upload](/assets/images/Onpeat-upload.png)
+      ![upload](/assets/images/Onpeat-upload-2.png)
 
   - 프로젝트 과정을 블로그에 기록하여 공유.
 
