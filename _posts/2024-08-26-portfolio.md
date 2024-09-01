@@ -4,13 +4,10 @@
 
 백엔드 개발자로서, 대규모 트래픽 처리와 자원 관리에 대한 깊은 이해를 가지고 있습니다. 복잡한 시스템에서 성능을 극대화하고 자원을 효율적으로 활용하며, 안정적이고 신뢰할 수 있는 서비스를 제공하기 위해 지속적으로 연구하고 개선해 나가고 있습니다. 이를 통해 고성능 애플리케이션의 구현과 안정적인 서비스 운영을 목표로 하고 있습니다.
 
-
 ✔️ 팀 전체의 목표를 이해하고, 협업을 통해 그 목표를 달성하는 데 적극 기여합니다. <br>
 ✔️ 변화하는 요구사항에 유연하게 대응할 수 있도록, 확장성을 염두에 두고 코드를 설계합니다. <br>
 ✔️ 코드의 효과와 목적을 명확히 이해하며, 근거 있는 코드를 작성하려고 항상 노력합니다. <br>
 ✔️ 최적화와 자원 관리를 통해 사용자의 경험을 개선할 때 큰 보람을 느낍니다.
-
-<br> 
 
 ## 📌 Profile
 
@@ -25,7 +22,8 @@
 - Samsung Software Academy For Youth 11th (SSAFY)
 
   - 2024.01 ~
-  - SW 필수 지식과 알고리즘 중심의 몰입형 코딩 교육
+  - 알고리즘 및 필수 소프트웨어 지식에 중점을 둔 집중 코딩 교육 과정
+  - 자율적으로 기획하고 구현하는 프로젝트 경험
 
 - 한국과학기술원 (KAIST) 몰입캠프
   
@@ -56,7 +54,7 @@
 &nbsp; 온라인 알고리즘 스터디를 위한 웹사이트 개발 
 </summary>
 
-> 2024.7 - 2023.8
+> 2024.7 - 2024.8
 >
 > First Project of Samsung Software Academy For Youth
 
@@ -74,10 +72,9 @@
 
     - `Nginx`를 이용한 ssl 인증, 프록시 설정
     - `Jenkins`, `WebHook`를 활용한 `ci/cd` 구축
-    - `Docker`를 활용한 코드 실행을 위한 환경 구축
-    - `redis`의 캐시 처리 최적화를 위한 환경 구축
+    - `Docker`를 활용한 코드 실행 환경 구축
 
-    <img src="/assets/images/Cosmos-Infra.png" alt="인프라 아키텍처">
+    <img src="https://raw.githubusercontent.com/hyukji/hyukji.github.io/master/assets/images/Cosmos-Infra.png" alt="인프라 아키텍처">
 
     <!-- - ![인프라 아키텍처](/assets/images/Cosmos-Infra.png){ width=70%} -->
 
@@ -94,8 +91,12 @@
       - 스터디의 전체 폴더 구조의 경우 추가, 수정, 삭제 보다 조회의 호출빈도가 더 높음.
       - nGrinder를 이용한 성능 테스트를 통해 `95.6%`의 성능 향상(23초 -> 1초)
       <div style="display: flex; justify-content: space-between;">
-          <img src="/assets/images/Cosmos-Redis.png" alt="성능향상 전(23초)" style="width: 50%;">
-          <img src="/assets/images/Cosmos-Redis2.png" alt="성능향상 후(1초)" style="width: 50%;">
+          <a href="https://raw.githubusercontent.com/hyukji/hyukji.github.io/master/assets/images/Cosmos-Redis.png" target="_blank">
+              <img src="https://raw.githubusercontent.com/hyukji/hyukji.github.io/master/assets/images/Cosmos-Redis.png" alt="성능향상 전(23초)" style="width: 50%;">
+          </a>
+          <a href="https://raw.githubusercontent.com/hyukji/hyukji.github.io/master/assets/images/Cosmos-Redis2.png" target="_blank">
+              <img src="https://raw.githubusercontent.com/hyukji/hyukji.github.io/master/assets/images/Cosmos-Redis2.png" alt="성능향상 후(1초)" style="width: 50%;">
+          </a>
       </div>
 
   - Java, Python 코드 실행
@@ -178,7 +179,6 @@
 
 - SpringSecurity를 이용한 인증/인가
     - `AuthenticationFilter`, `AuthenticationManager`, `AuthenticationProvider` 등 단순한 인증, 인가 구현보다는 `SpringSecurity`에서 지향하는 아키텍처들을 이해하고 구현하고자 함.
-        - `Security Context`의 `TheadLocal`에 대해 공부하는 등 내부 구조를 이해하고자 노력함
 
 - 구체적인 Test 작성
     - `단위테스트`, `통합테스트`, `인수테스트`를 꼼꼼하게 작성하면서 프로젝트를 진행함.
@@ -221,7 +221,7 @@
     - 오디오 파일 생성 시, 오디오 파장 분석 및 어절 단위 구분
     - 어절 단위로 이동 및 반복 기능
 
-      ![Onpeat_audio](/assets/images/Onpeat_audio.png)
+      ![Onpeat_audio](https://raw.githubusercontent.com/hyukji/hyukji.github.io/master/assets/images/Onpeat_audio.png)
 
   - 오디오 파일 관리 기능
 
@@ -229,8 +229,8 @@
     - 폴더 구조를 이용한 파일 관리
   
     <div style="display: flex; justify-content: space-between;">
-        <img src="/assets/images/Onpeat-upload.png" alt="upload" style="width: 39%;">
-        <img src="/assets/images/Onpeat-upload-2.png" alt="upload" style="width: 59%;">
+        <img src="https://raw.githubusercontent.com/hyukji/hyukji.github.io/master/assets/images/Onpeat-upload.png" alt="upload" style="width: 39%;">
+        <img src="https://raw.githubusercontent.com/hyukji/hyukji.github.io/master/assets/images/Onpeat-upload-2.png" alt="upload" style="width: 59%;">
     </div>
 
   - 프로젝트 과정을 블로그에 기록하여 공유.
