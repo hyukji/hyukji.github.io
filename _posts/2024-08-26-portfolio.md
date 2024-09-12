@@ -38,14 +38,12 @@
 
 ### 📚 Stacks
 
-- BE : `SpringBoot`, `JPA`, `QueryDsl`, `Mysql`, `MongoDB`, `node.js`,
-- Infra : `AWS(EC2, S3)`, `Nginx`, `Jenkins`, `Docker-compose`, `Docker`
+- BE : `SpringBoot`, `JPA`, `QueryDsl`, `Mysql`, `MongoDB`, `node.js`
+- Infra : `AWS(EC2, S3)`, `Nginx`, `Jenkins`, `Docker-compose`, `Docker`, 
 - FE : `Vue.js`
 - Data : `Python`, `PyTorch`, `NumPy`, `pandas`, `Matplotlib`
+- ETC : `nGrinder`
 
-### 🌐 Language Skills
-
-- OPIC IM1 (2024.03)
 
 ## 📖 Projects
 
@@ -89,7 +87,7 @@
       - `queryDsl` 및 `fetchJoin`을 이용해 `N+1 문제` 해결
     - `Redis`를 이용한 캐시 활용.
       - 스터디의 전체 폴더 구조의 경우 추가, 수정, 삭제 보다 조회의 호출빈도가 더 높음.
-      - nGrinder를 이용한 성능 테스트를 통해 `95.6%`의 성능 향상(23초 -> 1초)
+      - 500명 동시 접속 시의 성능 최적화 : `95.6%`의 성능 향상(23초 -> 1초)
       <div style="display: flex; justify-content: space-between;">
           <a href="https://raw.githubusercontent.com/hyukji/hyukji.github.io/master/assets/images/Cosmos-Redis.png" target="_blank">
               <img src="https://raw.githubusercontent.com/hyukji/hyukji.github.io/master/assets/images/Cosmos-Redis.png" alt="성능향상 전(23초)" style="width: 50%;">
@@ -101,7 +99,10 @@
 
   - Java, Python 코드 실행
 
-    - 실행 언어의 확장성을 고려해 `팩토리 패턴`을 활용.
+    - 현재는 Java, Python 두개의 언어만 지원하지만 다른 언어의 확장성을 고려해 `팩토리 패턴`을 활용함.
+
+      ![alt text](../assets/images/Factory-pattern.png)
+
 
       #### CodeExecutorFactory
 
@@ -158,7 +159,12 @@
 
 - BE & DB: `SpringBoot`, `JPA`, `QueryDsl`, `Mysql`, `Redis`
 - Infra: `Nginx`, `ec2`, `Jenkins`, `Docker`, `Dokcer-compose`
-- Etc : `WebRTC`
+- Etc : `nGrinder`, `WebRTC`
+
+#### 성과
+
+- [삼성 청년 SW아카데미 프로젝트 우수상](/assets/images/awards/ssafy-project.jpg) - _삼성전자 주식회사 (2024)_
+- 500명 동시 접속 시의 성능 최적화 : `95.6%`의 성능 향상(23초 -> 1초)
 
 #### 관련 자료
 
@@ -337,9 +343,9 @@
 </details>
 
 ## 🏆 Awards
-- 삼성 청년 SW아카데미 프로젝트 우수상 - _삼성전자 주식회사 (2024)_
+- [삼성 청년 SW아카데미 프로젝트 우수상](/assets/images/awards/ssafy-project.jpg) - _삼성전자 주식회사 (2024)_
 - [삼성 청년 SW아카데미 성적우수상](/assets/images/awards/ssafy_dean.jpg) - _삼성전자 주식회사 (2024)_
-- [2023 Dean's List](/assets/pdf/awards/dean.pdf) _- DGIST (2023)_
+- [2023 Dean's List](/assets/images/awards/dean.jpg) _- DGIST (2023)_
 
 ## 📃 Certificates
 
