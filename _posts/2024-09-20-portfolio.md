@@ -1,8 +1,10 @@
 안녕하세요! 백엔드 개발자 곽지혁입니다.
 
-저는 코드의 확장성과 안정성을 깊이 고려하며, 모든 코드 작성 시 명확한 근거를 바탕으로 작업합니다. 구조적이고 근거 있는 코드를 작성하는 습관은 장기 프로젝트의 성공뿐만 아니라 개인의 성장에도 중요한 요소라고 믿습니다.
+저는 코드 작성 시 확장성과 안정성을 최우선으로 고려하며, 명확한 근거를 바탕으로 작업합니다. 팩토리 패턴과 같은 디자인 패턴을 적극 활용하고, 가상화 기술을 통해 안정성을 높이는 방식으로 프로젝트들을 진행해왔습니다. 이러한 근거 중심의 코딩 습관은 장기 프로젝트의 성공뿐만 아니라 개인 성장에도 핵심적인 요소라고 믿습니다.
 
-백엔드 개발자로서, 대규모 트래픽 처리와 자원 관리에 대한 깊은 이해를 가지고 있습니다. 복잡한 시스템에서 성능을 극대화하고 자원을 효율적으로 활용하며, 안정적이고 신뢰할 수 있는 서비스를 제공하기 위해 지속적으로 연구하고 개선해 나가고 있습니다. 이를 통해 고성능 애플리케이션의 구현과 안정적인 서비스 운영을 목표로 하고 있습니다.
+백엔드 개발자로서 대규모 트래픽 처리와 자원 관리에도 대한 깊은 관심을 가지고 있습니다. 500명 동시 접속 환경에서 조회 API 성능을 96% 개선한 경험을 바탕으로 복잡한 시스템의 성능을 극대화하며 관련 역량을 쌓고자 했습니다.
+
+안정적이고 신뢰할 수 있는 서비스를 제공하는 것을 목표로, 현재는 '삼성 SW 아카데미'에서 역량을 강화하고 있습니다.
 
 ✔️ 팀 전체의 목표를 이해하고, 협업을 통해 그 목표를 달성하는 데 적극 기여합니다. <br>
 ✔️ 변화하는 요구사항에 유연하게 대응할 수 있도록, 확장성을 염두에 두고 코드를 설계합니다. <br>
@@ -24,6 +26,7 @@
   - 2024.01 ~
   - 알고리즘 및 필수 소프트웨어 지식에 중점을 둔 집중 코딩 교육 과정
   - 자율적으로 기획하고 구현하는 프로젝트 경험
+  - 삼성전자 연계 프로젝트 진행
 
 - 한국과학기술원 (KAIST) 몰입캠프
   
@@ -69,7 +72,7 @@
   - `Infra` 구축 및 DB 설계
 
     - `Nginx`를 이용한 ssl 인증, 프록시 설정
-    - `Jenkins`, `WebHook`를 활용한 `ci/cd` 구축
+    - `Jenkins`, `WebHook`를 활용한 `CI/CD` 구축
     - `Docker`를 활용한 코드 실행 환경 구축
 
     <img src="https://raw.githubusercontent.com/hyukji/hyukji.github.io/master/assets/images/Cosmos-Infra.png" alt="인프라 아키텍처">
@@ -86,7 +89,7 @@
     - `N+1` 문제 해결
       - `queryDsl` 및 `fetchJoin`을 이용해 `N+1 문제` 해결
     - `Redis`를 이용한 캐시 활용.
-      - 스터디의 전체 폴더 구조의 경우 추가, 수정, 삭제 보다 조회의 호출빈도가 더 높음.
+      - 스터디의 전체 폴더 구조의 경우 추가, 수정, 삭제 보다 **조회의 호출빈도가 더 높음**.
       - 500명 동시 접속 시의 성능 최적화 : `95.6%`의 성능 향상(23초 -> 1초)
       <div style="display: flex; justify-content: space-between;">
           <a href="https://raw.githubusercontent.com/hyukji/hyukji.github.io/master/assets/images/Cosmos-Redis.png" target="_blank">
@@ -99,7 +102,7 @@
 
   - Java, Python 코드 실행
 
-    - 현재는 Java, Python 두개의 언어만 지원하지만 다른 언어의 확장성을 고려해 `팩토리 패턴`을 활용함.
+    - 현재는 Java, Python 두개의 언어만 지원하지만 **다른 언어의 확장성을 고려해** `팩토리 패턴`을 활용함.
 
       ![alt text](../assets/images/Factory-pattern.png)
 
@@ -144,16 +147,16 @@
       public class PythonCodeExecutor implements CodeExecutor { ... }
       ```
 
-    - Container를 활용한 코드 실행 구현
+    - 가상화 기술을 활용한 안정성 관리
 
-      - `코드 실행 API` 요청 시 컨테이너 내부에서 코드를 실행하고 결과를 반환한다.
-
-      - 가상화 기술의 활용 이유 : 검증되지 않은 코드를 서버에서 직접 실행하는 것은 보안적인 취약점이 존재할 수 있다고 판단함.
+      - 가상화 기술의 활용 이유 : 검증되지 않은 코드를 메인 서버에서 직접 실행하는 것은 보안적인 취약점이 존재할 수 있다고 판단. 도커 컨테이너를 활용해 분리된 실행 환경을 구축함.
+  
+      - `코드 실행 API` 요청 시 컨테이너 내부에서 코드를 실행하고 결과를 반환. 무한 루프와 같은 경우를 대비해 컨테이너 시간이 `5초`를 넘어가지 않도록 설정
 
       - `코드 실행 API`의 요청이 많아진다면 자원 관리에 문제가 생길 수 있음
         - Container에 할당할 `메모리`, `cpu`를 설정
-        - 무한 루프와 같은 경우를 대비해 컨테이너 시간이 `10초`를 넘어가지 않도록 설정
         - `세마포어`를 이용한 컨테이너 개수 제한
+          - k8s, Pooling 기법들도 고민해 보았지만, 한정된 기한안에 자원 관리를 고려한 코드 작성을 위해 세마포어로 컨테이너 개수를 제한함.
 
 #### 기술 및 라이브러리
 
@@ -164,42 +167,6 @@
 #### 성과
 
 - [삼성 청년 SW아카데미 프로젝트 우수상](/assets/images/awards/ssafy-project.jpg) - _삼성전자 주식회사 (2024)_
-- 500명 동시 접속 시의 성능 최적화 : `95.6%`의 성능 향상(23초 -> 1초)
-
-#### 관련 자료
-
-깃허브 주소
-
-</details>
-
-<details markdown="1">
-<summary class="h3-title">
-&nbsp; RealWorld  
-</summary>
-
-> 2023.8 - 2023.10
->
-> SpringBoot Project
-
-#### 프로젝트 개요
-
-- SpringSecurity를 이용한 인증/인가
-    - `AuthenticationFilter`, `AuthenticationManager`, `AuthenticationProvider` 등 단순한 인증, 인가 구현보다는 `SpringSecurity`에서 지향하는 아키텍처들을 이해하고 구현하고자 함.
-
-- 구체적인 Test 작성
-    - `단위테스트`, `통합테스트`, `인수테스트`를 꼼꼼하게 작성하면서 프로젝트를 진행함.
-    - `Fixtures` 와 `Stub` 객체들을 활용해 테스트를 진행
-    
-- `CQRS 패턴` 적용
-    - 게시글의 경우 조회 빈도가 더 높을 것으로 예상되어 읽기를 위한 간소화한 데이터 모델을 별로도 구성함
-
-#### 기술 및 라이브러리
-
-- BE : SpringBoot, Mysql, JPA, QueryDsl
-
-#### 관련 자료
-
-[GitHub](https://github.com/realworld-spring/spring-boot)
 
 </details>
 
@@ -241,6 +208,8 @@
 
   - 프로젝트 과정을 블로그에 기록하여 공유.
 
+      ![alt text](/assets/images/Onpeat_blog.png)
+
 #### 관련 자료
 
 [GitHub](https://github.com/hyukji/ListenApp), [Blog](https://hyukji.tistory.com/category/IOS/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80)
@@ -276,6 +245,8 @@
       - 샌드박스 및 에디터 화면 분할 기능
       - 화면
         ![editor](https://user-images.githubusercontent.com/52347271/230982511-6f7663ba-234a-4570-bc8e-0cea3ecfaf0f.jpg)
+        
+        ![board](/assets/images/Forest_board.png)
 
 #### 역할
 
