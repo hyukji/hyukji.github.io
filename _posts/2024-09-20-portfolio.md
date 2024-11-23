@@ -72,16 +72,10 @@
   - 청각장애인들이 의사소통의 불편함을 겪고 있음.
   - 본인을 부르는 소리를 인지하지 못해 일상에서의 불편함을 가지고 있음
 
-  <table>
-    <tr>
-      <td>
-        <img src="../assets/images/news3.jpg" alt="뉴스자료">
-      </td>
-      <td>
-        <img src="../assets/images/survey.jpg" alt="설문 조사 내용">
-      </td>
-    </tr>
-  </table>
+    <img src="../assets/images/news3.jpg" alt="뉴스자료">
+    
+    <img src="../assets/images/survey.jpg" alt="설문 조사 내용">
+
         
 - 목표
   - 위급상황, 일상생활의 소리를 인식하여 제공하는 기능 제공.
@@ -106,7 +100,7 @@
       - 온디바이스 AI 도입의 위해 android 내부의 STT, TTS 활용
       - 최신 기종이 아닌 경우, Google Cloud API를 활용해 STT, TTS 도입
 
-        <img src="../assets/gif/음성인식.gif" alt="음성인식" style="width:150px;">
+        <img src="../assets/gif/음성인식.gif" alt="음성인식" style="width:200px;">
       <!-- ![alt text](<../assets/gif/음성인식.gif>)  -->
 
     - 예상 답변 생성
@@ -118,10 +112,10 @@
         <table>
           <tr>
             <td>
-              <img src="../assets/gif/예상답변생성.gif" alt="예상 답변 내 단어 변경" style="width:150px;">
+              <img src="../assets/gif/예상답변생성.gif" alt="예상 답변 내 단어 변경" style="width:200px;">
             </td>
             <td>
-              <img src="../assets/gif/단어변경기능.gif" alt="예상 답변 내 단어 변경" style="width:150px;">
+              <img src="../assets/gif/단어변경기능.gif" alt="예상 답변 내 단어 변경" style="width:200px;">
             </td>
           </tr>
         </table>
