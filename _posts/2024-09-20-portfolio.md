@@ -69,13 +69,13 @@
 > 
 > 실제 창각장애인 분을 모시고 진행한 인터뷰입니다.
 >
-> 그분의 이야기를 들어보고, 또 저희가 만든 어플리케이션에 대한 후기를 들어볼 수 있었습니다.
+> 저희가 만든 어플리케이션을 활용해 인터뷰를 진행했습니다.
 >
 
 <iframe src="https://drive.google.com/file/d/1q90fBE07AI1en1BaGbKIdsjW-mUa9hHS/preview" width="640" height="480" allow="autoplay"></iframe>
 
 
-</br>
+<br/>
 
 - 문제 제기
 
@@ -123,9 +123,6 @@
       - 최신 기종이 아닌 경우, Google Cloud API를 활용해 STT, TTS 도입
 
 #### 결과
-
-
-
 
   <table>
     <tr>
