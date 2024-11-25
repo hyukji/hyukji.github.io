@@ -66,13 +66,22 @@
 
 #### 프로젝트 개요
 
+> 
+> 실제 창각장애인 분을 모시고 진행한 인터뷰입니다.
+>
+> 그분의 이야기를 들어보고, 또 저희가 만든 어플리케이션에 대한 후기를 들어볼 수 있었습니다.
+>
+
+<iframe src="https://drive.google.com/file/d/1q90fBE07AI1en1BaGbKIdsjW-mUa9hHS/preview" width="640" height="480" allow="autoplay"></iframe>
+
+
+</br>
+
 - 문제 제기
 
   - 청각장애인들이 위험 상황에 대한 신속한 인지가 어려움
   - 청각장애인들이 의사소통의 불편함을 겪고 있음.
   - 본인을 부르는 소리를 인지하지 못해 일상에서의 불편함을 가지고 있음
-
-    <img src="../assets/images/news3.jpg" alt="뉴스자료">
     
     <img src="../assets/images/survey.jpg" alt="설문 조사 내용">
 
@@ -95,13 +104,7 @@
       ![alt text](../assets/images/infra3.png)
 
   - 보조 대화 기능
-  
-    - 음성인식 기능 구현
-      - 온디바이스 AI 도입의 위해 android 내부의 STT, TTS 활용
-      - 최신 기종이 아닌 경우, Google Cloud API를 활용해 STT, TTS 도입
 
-        <img src="../assets/gif/음성인식.gif" alt="음성인식" style="width:200px;">
-      <!-- ![alt text](<../assets/gif/음성인식.gif>)  -->
 
     - 예상 답변 생성
   
@@ -109,23 +112,45 @@
       - 예상 답변 내의 단어 변경 기능
         - GraphDB인 `Neo4j`를 활용해 단어간의 관계 유사도 활용
 
-        <table>
-          <tr>
-            <td>
-              <img src="../assets/gif/예상답변생성.gif" alt="예상 답변 내 단어 변경" style="width:200px;">
-            </td>
-            <td>
-              <img src="../assets/gif/단어변경기능.gif" alt="예상 답변 내 단어 변경" style="width:200px;">
-            </td>
-          </tr>
-        </table>
 
     - SSE 적용
       - **OpenAI**의 응답 속도를 줄이기 위한 `SSE` 도입
       - **3초에서 1초대**로 초기 응답 속도 개선
-  
-#### 성과
 
+
+    - 음성인식 기능 구현
+      - 온디바이스 AI 도입의 위해 android 내부의 STT, TTS 활용
+      - 최신 기종이 아닌 경우, Google Cloud API를 활용해 STT, TTS 도입
+
+#### 결과
+
+
+
+
+  <table>
+    <tr>
+      <td>
+        <img src="../assets/gif/음성인식.gif" alt="음성인식" style="width:200px;">      </td>
+      <td>
+        <img src="../assets/gif/예상답변생성.gif" alt="예상 답변 내 단어 변경" style="width:200px;">
+      </td>
+      <td>
+        <img src="../assets/gif/단어변경기능.gif" alt="예상 답변 내 단어 변경" style="width:200px;">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="../assets/gif/w_음성인식.gif" alt="음성인식" style="width:200px;">     
+      </td>
+      <td>
+        <img src="../assets/gif/w_예상답변생성.gif" alt="예상 답변 내 단어 변경" style="width:200px;">
+      </td>
+      <td>
+        <img src="../assets/gif/w_단어변경기능.gif" alt="예상 답변 내 단어 변경" style="width:200px;">
+      </td>
+    </tr>
+    
+  </table>
 
 </details>
 
